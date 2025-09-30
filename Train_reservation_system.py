@@ -140,18 +140,18 @@ def cancel_ticket():
             if(UPPER_BERTH_ARR[i].id == cancel_id):
                 UPPER_BERTH_ARR.pop(i)
                 founder = True
-                UPPER_BERTH -=1
+                UPPER_BERTH +=1
 
                 if(len(RAC_TICKET_ARR) != 0):
                     rac_ticket = RAC_TICKET_ARR.pop(0)
                     UPPER_BERTH_ARR.append(rac_ticket)
-                    UPPER_BERTH +=1
-                    RAC_TICKET -=1
+                    UPPER_BERTH -=1
+                    RAC_TICKET +=1
                     if(len(WAITING_TICKETS_ARR) !=0 ):
                         waiting_ticket = WAITING_TICKETS_ARR.pop(0)
                         RAC_TICKET_ARR.append(waiting_ticket)
-                        RAC_TICKET +=1
-                        WAITING_TICKETS -=1
+                        RAC_TICKET -=1
+                        WAITING_TICKETS +=1
 
 
 
@@ -161,17 +161,17 @@ def cancel_ticket():
             if(MIDDLE_BERTH_ARR[i].id == cancel_id):
                 MIDDLE_BERTH_ARR.pop(i)
                 founder = True
-                MIDDLE_BERTH -=1
+                MIDDLE_BERTH +=1
                 if (len(RAC_TICKET_ARR) != 0):
                     rac_ticket = RAC_TICKET_ARR.pop(0)
                     MIDDLE_BERTH_ARR.append(rac_ticket)
-                    MIDDLE_BERTH += 1
-                    RAC_TICKET -= 1
+                    MIDDLE_BERTH -= 1
+                    RAC_TICKET += 1
                     if (len(WAITING_TICKETS_ARR) != 0):
                         waiting_ticket = WAITING_TICKETS_ARR.pop(0)
                         RAC_TICKET_ARR.append(waiting_ticket)
-                        RAC_TICKET += 1
-                        WAITING_TICKETS -= 1
+                        RAC_TICKET -= 1
+                        WAITING_TICKETS += 1
 
     elif (cancel_status == "L"):
         for i in range(len(LOWER_BERTH_ARR)):
@@ -200,7 +200,7 @@ def cancel_ticket():
                     waiting_ticket = WAITING_TICKETS_ARR.pop(0)
                     RAC_TICKET_ARR.append(waiting_ticket)
                     RAC_TICKET += 1
-                    WAITING_TICKETS -= 1
+                    WAITING_TICKETS += 1
 
     elif(cancel_status == "W"):
         for i in range(len(WAITING_TICKETS_ARR)):
